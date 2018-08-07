@@ -66,14 +66,14 @@ generators:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: null
 - type: "special_chars "
   assertions:
@@ -83,7 +83,7 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: null
 - type: "null_value"
   assertions:
@@ -93,7 +93,7 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: null
 - type: "empty_value"
   assertions:
@@ -103,7 +103,7 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: null
 - type: "create"
   assertions:
