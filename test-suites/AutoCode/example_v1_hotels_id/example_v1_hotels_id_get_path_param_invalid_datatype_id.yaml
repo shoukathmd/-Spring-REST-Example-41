@@ -1,9 +1,9 @@
 ---
 parent: "example_v1_hotels_id"
-name: "example_v1_hotels_id_get_path_param_sql_injection_MySQL_id"
+name: "example_v1_hotels_id_get_path_param_invalid_datatype_id"
 description: "You have to provide a valid hotel ID."
 type: "SUITE"
-endpoint: "/example/v1/hotels/{{@MySQLSQLInjections}}"
+endpoint: "/example/v1/hotels/SYmQLJ"
 method: "GET"
 auth: "Default"
 headers:
@@ -11,7 +11,7 @@ headers:
 - "Content-Type: application/json"
 testCases: []
 assertions:
-- "@ResponseTime >= 5000"
+- "@StatusCode != 200"
 - "@StatusCode != 401"
 - "@StatusCode != 404"
 - "@StatusCode != 500"
@@ -19,15 +19,7 @@ tags:
 - "V1"
 authors:
 - "FX Bot"
-category: "SQL_Injection"
+category: "Negative"
 severity: "Critical"
 inactive: false
-policies:
-  initExec: "Request"
-  cleanupExec: "Request"
-  logger: "DEBUG"
-  timeoutSeconds: 300
-  repeatOnFailure: 0
-  repeat: 0
-  repeatModule: "@MySQLSQLInjections"
-  repeatDelay: 0
+policies: null
