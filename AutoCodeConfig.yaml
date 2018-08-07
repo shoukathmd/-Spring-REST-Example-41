@@ -96,6 +96,13 @@ generators:
   database: null
   inactive: true
   autoCodeGeneratorMatches: null
+- type: "anonymous_invalid"
+  assertions:
+  - "@StatusCode != 200"
+  severity: "Critical"
+  database: null
+  inactive: true
+  autoCodeGeneratorMatches: null
 - type: "sql_injection"
   assertions:
   - "@ResponseTime >= 5000"
@@ -107,11 +114,4 @@ generators:
     name: "MySQL"
     version: "5.7"
   inactive: false
-  autoCodeGeneratorMatches: null
-- type: "anonymous_invalid"
-  assertions:
-  - "@StatusCode != 200"
-  severity: "Critical"
-  database: null
-  inactive: true
   autoCodeGeneratorMatches: null
