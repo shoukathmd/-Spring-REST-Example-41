@@ -1,26 +1,23 @@
 ---
 parent: "example_v1_hotels"
-name: "example_v1_hotels_get_query_param_null_value_size"
+name: "example_v1_hotels_get_auth_invalid"
 description: "The list is paginated. You can provide a page number (default 0) and\
   \ a page size (default 100)"
 type: "SUITE"
 endpoint: "/example/v1/hotels"
 method: "GET"
-auth: "Default"
+auth: "INVALID_AUTH"
 headers:
 - "Accept: application/json"
 - "Content-Type: application/json"
 testCases: []
 assertions:
 - "@StatusCode != 200"
-- "@StatusCode != 401"
-- "@StatusCode != 404"
-- "@StatusCode != 500"
 tags:
 - "V1"
 authors:
 - "FX Bot"
-category: "Negative"
+category: "UnSecured"
 severity: "Critical"
 inactive: false
 policies: null
