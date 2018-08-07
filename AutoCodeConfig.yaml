@@ -2,38 +2,6 @@
 genPolicy: "Create"
 openAPISpec: "http://18.144.38.115:8090/v2/api-docs"
 generators:
-- type: "ddos"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: "Critical"
-  database: null
-  inactive: true
-  autoCodeGeneratorMatches: null
-- type: "XSS_Injection"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: "Critical"
-  database: null
-  inactive: true
-  autoCodeGeneratorMatches: null
-- type: "sql_injection"
-  assertions:
-  - "@ResponseTime >= 5000"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: "Critical"
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: true
-  autoCodeGeneratorMatches: null
 - type: "log_Forging"
   assertions:
   - "@StatusCode != 200"
@@ -61,6 +29,16 @@ generators:
   database: null
   inactive: false
   autoCodeGeneratorMatches: null
+- type: "ddos"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: true
+  autoCodeGeneratorMatches: null
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -83,7 +61,7 @@ generators:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: false
+  inactive: true
   autoCodeGeneratorMatches: null
 - type: "special_chars "
   assertions:
@@ -114,4 +92,26 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
+  autoCodeGeneratorMatches: null
+- type: "XSS_Injection"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: true
+  autoCodeGeneratorMatches: null
+- type: "sql_injection"
+  assertions:
+  - "@ResponseTime >= 5000"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: true
   autoCodeGeneratorMatches: null
