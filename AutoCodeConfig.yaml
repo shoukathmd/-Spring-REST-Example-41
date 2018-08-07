@@ -10,14 +10,14 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
+  inactive: true
   autoCodeGeneratorMatches: null
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
   severity: "Critical"
   database: null
-  inactive: false
+  inactive: true
   autoCodeGeneratorMatches: null
 - type: "invalid_datatype"
   assertions:
@@ -52,13 +52,6 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: "Critical"
-  database: null
-  inactive: true
-  autoCodeGeneratorMatches: null
-- type: "anonymous_invalid"
-  assertions:
-  - "@StatusCode != 200"
   severity: "Critical"
   database: null
   inactive: true
@@ -113,5 +106,12 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
+  inactive: true
+  autoCodeGeneratorMatches: null
+- type: "anonymous_invalid"
+  assertions:
+  - "@StatusCode != 200"
+  severity: "Critical"
+  database: null
   inactive: true
   autoCodeGeneratorMatches: null
