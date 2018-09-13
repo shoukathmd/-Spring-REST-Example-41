@@ -5,7 +5,7 @@ generators:
 - type: "no_params"
   assertions:
   - "@StatusCode == 200"
-  severity: "Major"
+  severity: null
   database: null
   inactive: false
   matches: []
@@ -13,7 +13,7 @@ generators:
   assertions:
   - "@StatusCode == 200"
   - "@StatusCode != 404"
-  severity: "Major"
+  severity: null
   database: null
   inactive: false
   matches:
@@ -28,14 +28,14 @@ generators:
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
@@ -43,7 +43,7 @@ generators:
   assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches:
@@ -61,7 +61,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
@@ -69,7 +69,7 @@ generators:
   assertions:
   - "@ResponseTime < 7000"
   - "@StatusCode != 404"
-  severity: "Critical"
+  severity: null
   database:
     name: "MySQL"
     version: "5.7"
@@ -81,14 +81,14 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches:
@@ -128,7 +128,7 @@ generators:
   assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
@@ -138,7 +138,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
@@ -148,7 +148,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
@@ -158,7 +158,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
@@ -166,7 +166,7 @@ generators:
   assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
@@ -176,7 +176,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: "Critical"
+  severity: null
   database: null
   inactive: false
   matches: []
