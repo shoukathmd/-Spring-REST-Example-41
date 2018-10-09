@@ -1,27 +1,67 @@
 ---
 genPolicy: "Create"
-openAPISpec: "Testing.json"
+openAPISpec: "http://18.144.38.115:8090/v2/api-docs"
 generators:
+- type: "no_params"
+  assertions:
+  - "@StatusCode == 200"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
+- type: "sla"
+  assertions:
+  - "@StatusCode == 200"
+  - "@StatusCode != 404"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: "1000"
+    methods: "Get"
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: "/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: "Get:/api/v1/user-signup/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: "Get:/api/v1/user-signup/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "DDOS"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: null
   database: null
   inactive: false
@@ -48,9 +88,7 @@ generators:
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime < 7000"
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: null
   database:
     name: "MySQL"
@@ -112,10 +150,8 @@ generators:
     bodyProperties: null
 - type: "invalid_datatype"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: null
   database: null
   inactive: false
@@ -152,10 +188,8 @@ generators:
   matches: []
 - type: "negative_number"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: null
   database: null
   inactive: false
